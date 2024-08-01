@@ -1,0 +1,189 @@
+/*
+	Reset the spacing between browser border and site content
+*/
+#nav {position: fixed; left: 0; top: 0px; width: 100%; height: 61px; z-index: 1000; background-color: rgba(253, 253, 253, 0.411); transition: all 0.3s ease; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+#nav.on {position: fixed; top: -61px;}
+#nav h1 {float: left; color: #021f2cef; font-size: 40px; padding: 5px 5px 5px 15px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;}
+
+body {
+	margin: 0;
+}
+
+
+/*
+	A toggle button to switch scrolling conversion between vertical and horizontal
+*/
+
+
+
+/*
+	Basic setup for the different sections of the site
+*/
+
+/* The whole document needs a width that fits all sections */
+html, body {
+	width: 4800px;
+	overflow-x: auto;
+	
+}
+
+.section {
+	width: 1600px;
+	height: 1200px;
+	overflow: hidden;
+	float: left;
+}
+.section-1 {
+	background: url(https://assets.architecturaldigest.in/photos/62e8fdde6b9540618ef0a493/master/w_1600%2Cc_limit/06.jpg) fixed;
+}
+.section-2 {
+	background: url(https://superrlife.com/wp-content/uploads/2021/10/TT11.jpg) fixed;
+}
+.section-3 {
+	background: url(https://cdn.venuemonk.com/assets/bangalore/xoox-brewmill-koramangala/images/full/xoox-brewmill-koramangala-4mzgr.jpg) fixed;
+}
+
+
+
+
+
+
+/*
+	Setup for the objects that will act as layers
+*/
+
+.obj-wrapper {
+	width: 960px;
+	height: 600px;
+	margin: 0 auto;
+}
+	.obj {
+		background: #fff;
+		box-shadow: 0 5px 20px rgba(0,0,0,.2);
+		border: 1px solid #bbb;
+
+		width: 100px;
+		height: 100px;
+
+		text-align: center;
+		text-transform: uppercase;
+		font: 14px/100px sans-serif;
+		background-size: cover;
+		background-position: center;
+	}
+	.obj img{
+		width: 100%;
+		height:100%;
+		object-fit: cover;
+	}
+    .obj-1{
+		background-image: url(obj1.jpg);
+	}
+	.obj-2{
+		background-image: url(obj2.jpg);
+	}
+    .obj-3{
+		background-image: url(obj3.jpg);
+	}
+	.obj-4{
+		background-image: url(obj4.jpg);
+	}
+
+
+	/* Section 1 */
+
+	.section-1 .obj-1 {
+		margin: 50px 0 0 190px;
+		width: 200px;
+		height: 100px;
+		background-image: url(obj1-1.jpg);
+	}
+	.section-1 .obj-2 {
+		margin: 130px 0 0 380px;
+		width: 300px;
+		height: 300px;
+		background-image: url(obj1-2.jpg);
+	}
+	.section-1 .obj-3 {
+		margin: 80px 0 0 550px;
+		width: 300px;
+		height: 200px;
+		background-image: url(obj1-3.jpg);
+	}
+	.section-1 .obj-4 {
+		margin: 250px 0 0 -20px;
+		width: 300px;
+		height: 300px;
+		background-image: url(obj1-4.jpg);
+	}
+
+
+
+	/* Section 2 */
+
+	.section-2 .obj-1 {
+		margin: 200px 0 0 300px;
+		width: 160px;
+		height: 200px;
+		line-height: 50px;
+		background-image: url(obj2-1.jpg);
+	}
+	.section-2 .obj-2 {
+		margin: 300px 0 0 350px;
+		width: 400px;
+		height: 200px;
+		line-height: 200px;
+		background-image: url(obj2-2.jpg);
+	}
+	.section-2 .obj-3 {
+		margin: 100px 0 0 -100px;
+		width: 300px;
+		height: 150px;
+		background-image: url(obj2-3.jpg);
+	}
+	.section-2 .obj-4 {
+		margin: 450px 0 0 600px;
+		width: 200px;
+		height: 100px;
+		background-image: url(obj2-4.jpg);
+	}
+
+
+
+	/* Section 3 */
+
+	.section-3 .obj-1 {
+		margin: 100px 0 0 600px;
+		width: 400px;
+		height: 200px;
+		background-image: url(obj3-1.jpg);
+	}
+	.section-3 .obj-2 {
+		margin: 280px 0 0 530px;
+		width: 300px;
+		height: 200px;
+		background-image: url(obj3-2.jpg);
+	}
+	.section-3 .obj-3 {
+		margin: 50px 0 0 400px;
+		width: 130px;
+		height: 400px;
+		line-height: 200px;
+		background-image: url(obj3-3.jpg);
+	}
+	.section-3 .obj-4 {
+		margin: 390px 0 0 225px;
+		width: 250px;
+		height: 150px;
+		background-image: url(obj3-4.jpg);
+	}
+	.text-overlay {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 100px;
+		color: #fff;
+		text-align: center;
+	  }
+	  

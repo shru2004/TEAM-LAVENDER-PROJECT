@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <title>FABTELS</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i'" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:100,300,400,700,900" >
+    <style>
+        /* reset */
+        * {margin:0; padding:0; }
+        *, *::after, *::before {box-sizing: border-box;}
+        li {list-style: none;}
+        a {text-decoration: none;}
+        
+        /* nav */
+        #nav {position: fixed; left: 0; top: 0px; width: 100%; height: 61px; z-index: 1000; background-color: rgba(253, 253, 253, 0.411); transition: all 0.3s ease; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+        #nav.on {position: fixed; top: -61px;}
+        #nav h1 {float: left; color: #021f2cef; font-size: 40px; padding: 5px 5px 5px 15px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;}
+        /* contents */
+        #contents {text-align: center; color: #e88585;}
+        
+        /* container */
+        .container {width: 1200px; margin: 0 auto;}
+        
+        /* section */
+        .section.s1 {background-color: #fafaf9;
+        background-image: url("h.jpg");
+         background-size: cover;
+        background-position: center;}
+        .section.s2 {background-color: #ccc;
+        background-image: url("h2.webp");
+        background-size: cover;
+        background-position: center;
+    }
+        .section.s3 {background-color: #ddd;
+        background-image: url("https://cf.bstatic.com/xdata/images/hotel/max1024x768/273576011.jpg?k=6d4877713f5e92a5928e735bfbec75632509dbc219860e909162ae1953098f38&o=&hp=1");
+        background-size: cover;
+        background-position: center;
+    }
+        .section.s4 {background-color: #eee;
+        background-image: url("https://www.itchotels.com/content/dam/itchotels/in/umbrella/itc/hotels/itcgardenia-bengaluru/images/overview-landing-page/headmast/desktop/lotus-pavillion.png");
+        background-size: cover;
+        background-position: center;
+    }
+        .section.s5 {background-color: #ddd;
+        background-image: url("https://th.bing.com/th/id/R.3c4f156bf666485065d6d9afceed89de?rik=pOeyz3thXfGG9w&riu=http%3a%2f%2fpix10.agoda.net%2fhotelImages%2f813%2f8131%2f8131_16090918500046311937.jpg%3fs%3d1024x768&ehk=ZkS62gSjAAFFcdhyk1EvtUDV8oGm0%2fLXEH%2bQu79eQFw%3d&risl=&pid=ImgRaw&r=0");
+        background-size: cover;
+        background-position: center;
+    }
+        .section.s6 {background-color: #ccc;
+        background-image: url("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/8a/e3/f2/itc-windsor-bengaluru.jpg?w=900&h=-1&s=1");
+        background-size: cover;
+        background-position: center;
+    }
+        
+        .section.s1 {position: relative; overflow: hidden; text-align: center;}
+        .section.s1 .sec1_text {padding: 15vw 5vw 10vw 5vw; font-size: 8vw; line-height: 1.2; margin: auto; color: #dedef1; font-family: 'Poppins', sans-serif; }
+
+        .section {overflow: hidden; flex-direction: row; display: flex; flex-wrap: wrap; align-items: center; color: #03082e; height: 100vh; min-height: 600px; font-family: 'Poppins', sans-serif;}
+        .section .sec_text {width: 50vw; font-size: 6vw; line-height: 1.2; text-align: right; padding: 0 0 0 2em;}
+        .section .sec_text.title_left {margin-left: -18vw;}
+        .section .sec_img {width: 50vw;}
+        .section img {width: 100%;}
+        
+        .section .sec_text {flex: none; position: relative; z-index: 2; display: inline-block; white-space: nowrap;}
+        .section .sec_text .st1 {margin-top: 160px; } 
+        .section .sec_text .st2 { }
+        .my-division{
+            font-style: italic;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 200;
+            font-size: 180%;
+            color: rgb(37, 34, 33);
+        }
+        .img-with-border {
+            border-radius: 20px; /* rounded corners */
+            border: 2px rgba(175, 238, 235, 0.904)solid; /* transparent border */
+            border-image: linear-gradient(to bottom right, #fcf9fc, #fcfdfe) 10; /* gradient border */
+          }
+          .text-reveal {
+            position: relative;
+            overflow: hidden;
+          }
+          
+          .text-reveal .text {
+            position: relative;
+            z-index: 1;
+            transition: transform 1s;
+            transform: translateX(100%);
+            font-family: 'Times New Roman', Times, serif ;/* New font family */
+            font-size: 24px; /* New font size */
+            font-weight: bold; /* New font weight */
+            font-style: italic;
+          }
+          
+          .text-reveal:hover .text {
+            transform: translateX(0);
+          }
+          
+          .text-reveal::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #212121cf;
+            transform: translateX(0);
+            transition: transform 1s;
+          }
+          
+          .text-reveal:hover::before {
+            transform: translateX(-100%);
+          }
+    </style>
+</head>
+<body>
+    <nav id="nav">
+        <h1>FABLOG</h1>
+    </nav>
+
+    <main>
+        <section class="section s1">
+            <h2 class="sec1_text">
+                <div class="text-reveal" style="color: #e3dae3d8;">
+                    <span class="text,my-division"style="font-family: 'Times New Roman', Times, serif;font-style:italic ">FABTELS</span></div>
+            </h2>
+        </section>
+        <!-- //section1 -->
+        
+        <section class="section s2">
+            <h2 class="sec_text">
+                <div class="st1 scrolled1,img-with-border" style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-style:oblique">Banglore's Best Hotels</div>
+                <div class="st2 scrolled2">At one place</div>
+            </h2>
+            <figure class="sec_img">
+                <div class="si1 scrolled3"><img src="https://www.siliconindia.com/travelcity/images/special_images/Tl16p9i5Ho0X84g.jpeg" alt="" class="img-with-border"></div>
+            </figure>
+        </section>
+        <!-- //section2 -->
+        
+        <section class="section s3">
+            <figure class="sec_img">
+                <div class="si1 scrolled3"><a href="https://www.oberoihotels.com/hotels-in-bengaluru/"><img src="https://www.siliconindia.com/travelcity/images/special_images/i00M32LV1hX8z6O.jpeg" alt="" class="img-with-border"></a></div>
+            </figure>
+            <h2 class="sec_text title_left">
+                <div class="st1 scrolled1" style="font-family: Verdana, Geneva, Tahoma, sans-serif;position: absolute; top: -250px; left: -30px;color:#ede355">Oberio Hotel</div>
+                <div class="st2 scrolled2"style="font-size: 35%; color:#e9f1f0"> -MG Road</div>
+            </h2>
+        </section>
+        <!-- //section3 -->
+        
+        <section class="section s4">
+            <h2 class="sec_text">
+                <div class="st1 scrolled1"style="font-family:Verdana, Geneva, Tahoma, sans-serif;color:#eee">Itc Gardenia</div>
+                <div class="st2 scrolled2"style="font-size:40%;color:rgba(175, 238, 235, 0.904)">-Recidency Road</div>
+            </h2>
+            <figure class="sec_img">
+                <div class="si1 scrolled3"><a href="https://res.itchotels.com/?adult=1&arrive=2024-07-29&bookingTime=Future%20Day&chain=26676&child=0&config=Business&currency=INR&depart=2024-07-30&hotel=30167&hotelID=30167&journey=undefined&level=hotel&locale=en-US&msclkid=12dd52a4df8c1c0cbd7c3402514b1039&rooms=1&specialCode=NA&stayLength=1&theme=Umbrella_chain&utm_campaign=HQ-DTL%7CHTL%7CBengaluru%7CITCGardenia%7CSearch%7CConversions%7CPanIndia%7Calways-on%7COwned%7CLC%7CBing%7CNA%7CNA%7CBusiness%7CBLRGL%7CBrand%7CMarch&utm_content=search&utm_medium=cpc&utm_source=bing"><img src="https://www.siliconindia.com/travelcity/images/special_images/1q6E45yf7Lh32IY.jpeg" alt=""class="img-with-border"></a></div>
+            </figure>
+        </section>
+        <!-- //section4 -->
+        
+        <section class="section s5">
+            <figure class="sec_img">
+                <div class="si1 scrolled3"><a href="https://www.tajhotels.com/en-in/hotels/taj-west-end-bengaluru/restaurants"><img src="https://www.siliconindia.com/travelcity/images/special_images/yJz145Wk6GALTiZ.jpeg" alt=""class="img-with-border"></a></div>
+            </figure>
+            <h2 class="sec_text title_left">
+                <div class="st1 scrolled1"style="font-family:Verdana, Geneva, Tahoma, sans-serif;color:#ddf19e">Taj West end</div>
+                <div class="st2 scrolled2"style="font-size:35%;color:#9eccf1">-Race course road</div>
+            </h2>
+        </section>
+        <!-- //section5 -->
+        
+        <section class="section s6">
+            <h2 class="sec_text">
+                <div class="st1 scrolled1"style="font-family:Verdana, Geneva, Tahoma, sans-serif;color:#cff5a6d0">Itc Windsor</div>
+                <div class="st2 scrolled2" style="font-size: 30%;color:#f5f5f5e2">-Golf Course road</div>
+            </h2>
+            <figure class="sec_img">
+                <div class="si1 scrolled3"><a href="https://res.itchotels.com/?adult=1&arrive=2024-07-28&bookingTime=Future%20Day&chain=26676&child=0&config=Business&currency=INR&depart=2024-07-29&hotel=30165&hotelID=30165&journey=undefined&level=hotel&locale=en-US&msclkid=9316482ecafc11c339f52e8845824974&rooms=1&specialCode=NA&stayLength=1&theme=Umbrella_chain&utm_campaign=HQ-DTL%7CHTL%7CBengaluru%7CITCWindsor%7CSearch%7CConversions%7CPanIndia%7Calways-on%7COwned%7CLC%7CBing%7CNA%7CNA%7CBusiness%7CBLRLC%7CBrand%7CMarch&utm_content=search&utm_medium=cpc&utm_source=bing">
+                    <img src="https://www.siliconindia.com/travelcity/images/special_images/IhgXz5B38N1H49k.jpeg" alt="" class="img-with-border"></a></div>
+            </figure>
+        </section>
+        <!-- //section6 -->
+    </main>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+
+        $(window).scroll(function(){
+            var wScroll = $(window).scrollTop();
+            var offset2 = (wScroll - $(".s2").offset().top);
+            var offset3 = (wScroll - $(".s3").offset().top);
+            var offset4 = (wScroll - $(".s4").offset().top);
+            var offset5 = (wScroll - $(".s5").offset().top);
+            var offset6 = (wScroll - $(".s6").offset().top);
+            
+
+            if(wScroll >= $(".section.s2").offset().top - $(window).height() ){
+                $(".section.s2 .sec_img").css({ 'transform' : 'translate('+ offset2 +'px, 0px)' })
+            }
+            
+            if(wScroll >= $(".section.s3").offset().top - $(window).height() ){
+                $(".section.s3 .sec_img").css({ 'transform' : 'translate('+ offset3 +'px, 0px)' })
+            }
+            
+            if(wScroll >= $(".section.s4").offset().top - $(window).height() ){
+                $(".section.s4 .sec_img").css({ 'transform' : 'translate(0px,'+ offset4 +'px)' })
+            }
+            
+            if(wScroll >= $(".section.s5").offset().top - $(window).height() ){
+                $(".section.s5 .sec_img").css({ 'transform' : 'translate(0px,'+ offset5 +'px)' })
+            }
+            
+            if(wScroll >= $(".section.s6").offset().top - $(window).height() ){
+                $(".section.s6 .sec_img").css({ 'transform' : 'translate('+ offset6 +'px, 0px)' })
+            }
+         }); 
+    </script>
+</body>
+</html>
+
+
+
+
+
+
